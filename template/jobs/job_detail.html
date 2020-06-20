@@ -1,0 +1,195 @@
+
+{% extends 'partials/layout.html' %}
+    
+{% block nav %}
+{% include "partials/nav.html" %}
+{% endblock nav %}
+    
+{% block home %}
+<div class="hero-wrap js-fullheight" style="background-image: url('/static/images/bg_2.jpg');" data-stellar-background-ratio="0.5">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row no-gutters slider-text js-fullheight align-items-end justify-content-start" data-scrollax-parent="true">
+          <div class="col-md-8 ftco-animate text-center text-md-left mb-5" data-scrollax=" properties: { translateY: '70%' }">
+          	<p class="breadcrumbs" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><span class="mr-3"><a href="{% url 'home' %}">Home <i class="ion-ios-arrow-forward"></i></a></span> <span>Job Detail</span></p>
+            <h1 class="mb-3 bread" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">{{ job.title}}</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+{% endblock home %}
+
+
+{% block recent_jobs %}
+
+    <div class="container">
+                    <div class="row justify-content-center mb-5 pb-3">
+            <div class="col-md-7 heading-section text-center ftco-animate">
+                
+            </div>
+            </div>
+                    
+                <div class="card-body">
+
+<div class="card-group">
+<div class="card border-0">
+<div class="card-header p-2"><h3 class="mb-1 h6"><strong>Basic Job Information</strong></h3></div>
+<div class="card-body p-0 table-responsive">
+<table class="table table-hover table-no-border m-0">
+<tr>
+<td width="33%">Job Category</td>
+<td width="3%">:</td>
+<td width="64%"><a href="#">{{ job.category }}</a>
+</td>
+</tr>
+<tr>
+<td>Job Type</td>
+<td>:</td>
+<td><a href="#">
+{{ job.job_type }}
+</a></td>
+</tr>
+<tr>
+<td>Company</td>
+<td>:</td>
+<td>
+<a href="{{ job.company_website }}">{{ job.company }}</a>
+</td>
+</tr>
+<tr>
+<td>No. of Vacancy/s</td>
+<td>:</td>
+<td>[ <strong>{{ job.no_of_vacancies }}</strong> ]</td>
+</tr>
+<tr>
+
+<tr>
+<td>Job Location</td>
+<td>:</td>
+<td>
+<span class="clearfix">{{ job.location }},{{ job.country }}</span>
+</td>
+</tr>
+<tr>
+<td>Offered Salary</td>
+<td>:</td>
+<td>
+{{ job.salary }}
+</td>
+</tr>
+<tr>
+<td>Experience</td>
+<td>:</td>
+<td>
+{{ job.experience }} year/s
+</td>
+</tr>
+<tr>
+<td>Apply Before<span class="mx-2">(Deadline)</span></td>
+<td>:</td>
+<td>Jun. 25, 2020 23:55
+(5 days, 2 hours from now)
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<hr class="mt-0 mb-4">
+
+
+<div class="card-group">
+<div class="card border-0">
+<div class="card-header p-2"><h3 class="mb-1 h6"><strong>Job Specification</strong></h3></div>
+<div class="card-body p-0 table-responsive">
+<table class="table table-hover table-no-border m-0">
+<tr>
+{% comment %} <td width="33%">Experience</td>
+<td width="3%">:</td>
+<td width="64%">
+<span itemprop="educationRequirements">{{ job.experience }}</span>
+</td>
+</tr>
+<tr> {% endcomment %}
+{% comment %} <td width="33%">Experience Required</td>
+<td width="3%">:</td>
+<td width="64%">
+<span itemprop="experienceRequirements">More than 4 years</span>
+</td>
+</tr>
+<tr> {% endcomment %}
+<td width="33%">Skill Required</td>
+<td width="3%">:</td>
+<td width="64%">
+<span itemprop="skills">
+<span>{{ job.key_skills }}</span>
+<tr>
+<td>Responsibilities</td>
+<td>:</td>
+<td>
+<span class="clearfix">{{ job.responsibilities }}</span>
+</td>
+</tr>
+<tr>
+<td>Job Description</td>
+<td>:</td>
+<td>
+<span class="clearfix">{{ job.job_description}}</span>
+</td>
+</tr>
+
+{% comment %} <td width="33%">Responsibilities</td>
+<td width="3%">:</td>
+<td width="64%">
+<span itemprop="skills">
+<span>{{ job.responsibilities }}</span>
+<td width="33%">Job Description</td>
+<td width="3%">:</td>
+<td width="64%">
+<span itemprop="skills">
+<span>{{ job.job_description }}</span> {% endcomment %}
+{% comment %} <span class="badge badge-secondary">Node.Js</span>
+<span class="badge badge-secondary">Typescript</span>
+<span class="badge badge-secondary">Npm Ecosystem</span>
+<span class="badge badge-secondary">Es6+</span> {% endcomment %}
+</span>
+</td>
+</tr>
+</table>
+{% comment %} <div class="card-group">
+<div class="card border-0">
+<div class="card-body p-2"><h6 class="mb-1">Other Specification
+</h6></div>
+<div class="card-text p-2">
+<p><strong>At least 4+ years’ experience with the following technologies:</strong></p><p></p><ul><li>Node.js, TypeScript, ES6+, Webpack and the NPM ecosystem</li><li>Database queries and transactions via PostgreSQL/MySQL and ElasticSearch</li><li>Unit Testing with Jest/Jasmine/Karma</li><li>Principals should include SOLID, RESTful services, GraphQL and microservice application design patterns</li><li>Git</li></ul><p></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div> {% endcomment %}
+
+                {% comment %} <div class="ml-auto d-flex">
+                    <a href="job-single.html" class="btn btn-primary py-2 mr-1">Apply Job</a>
+                    <a href="#" class="btn btn-secondary rounded-circle btn-favorite d-flex align-items-center icon">
+                        <span class="icon-heart"></span>
+                    </a>
+                </div> {% endcomment %}
+                </div>
+            </div><!-- end -->
+            
+    </div>
+     <div class="ml-auto d-flex">
+                  <a href="#" class="btn btn-secondary py-2 mr-2">Apply Job</a>
+                
+                  </a>
+                </div>
+{% endblock recent_jobs %}
+
+
+
+
+  
+{% block script %}
+{% include "partials/script.html" %}
+{% endblock script %}

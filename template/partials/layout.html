@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+  <head>
+  
+    <title>JobPortal</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,600,700,800,900" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'css/open-iconic-bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+    
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/aos.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/ionicons.min.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/bootstrap-datepicker.css' %}">
+    <link rel="stylesheet" href="{% static 'css/jquery.timepicker.css' %}">
+
+    
+    <link rel="stylesheet" href="{% static 'css/flaticon.css' %}">
+    <link rel="stylesheet" href="{% static 'css/icomoon.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  </head>
+  <body>
+    
+	    {% block nav %}
+      {% endblock nav %}
+	  
+    <!-- END nav -->
+    
+    
+      {% block home %}
+      {% endblock home %}
+    
+    
+      {% block service %}
+      {% endblock service %}
+    
+	{% block categories %}
+      {% endblock categories %}
+    
+
+		
+			{% block recent_jobs %}
+      {% endblock recent_jobs %}
+		
+   
+    	{% block flex %}
+      {% endblock flex %}
+    
+
+
+      {% block testimonals %}
+      {% endblock testimonals %}
+
+      {% block blog %}
+      {% endblock blog %}
+		
+		
+        {% block newsletter %}
+        {% endblock newsletter %}
+      
+
+    
+      {% block footer%}
+      {% endblock footer%}
+    
+  
+
+  <!-- loader -->
+  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+
+
+  {% block script %}
+  {% endblock script %}
+    
+  </body>
+</html>

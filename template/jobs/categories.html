@@ -1,0 +1,67 @@
+
+{% extends 'partials/layout.html' %}
+    
+{% block nav %}
+{% include "partials/nav.html" %}
+{% endblock nav %}
+    
+{% block home %}
+<div class="hero-wrap js-fullheight" style="background-image: url('/static/images/bg_2.jpg');" data-stellar-background-ratio="0.5">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row no-gutters slider-text js-fullheight align-items-end justify-content-start" data-scrollax-parent="true">
+          <div class="col-md-8 ftco-animate text-center text-md-left mb-5" data-scrollax=" properties: { translateY: '70%' }">
+          	<p class="breadcrumbs" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><span class="mr-3"><a href="index.html">Home <i class="ion-ios-arrow-forward"></i></a></span> <span>Category</span></p>
+            <h1 class="mb-3 bread" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">{{ category_jobs_list.0.category }}</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+{% endblock home %}
+
+
+{% block recent_jobs %}
+    <div class="container">
+                    <div class="row justify-content-center mb-5 pb-3">
+            <div class="col-md-7 heading-section text-center ftco-animate">
+                <span class="subheading">Recently Added Jobs</span>
+                <h2 class="mb-4">{{ category_jobs_list.0.category }}</h2>
+            </div>
+            </div>
+                    <div class="row">
+            {% for job in category_jobs_list %}
+                        <div class="col-md-12 ftco-animate">
+
+                <div class="job-post-item bg-white p-4 d-block d-md-flex align-items-center">
+
+                <div class="mb-4 mb-md-0 mr-5">
+                    <div class="job-post-item-header d-flex align-items-center">
+                    <a href='{{ job.get_absolute_url}}'><h2 class="mr-3 text-black h3">{{ job.title }}</h2></a>
+                    <div class="badge-wrap">
+                    <span class="bg-primary text-white badge py-2 px-3">{{ job.job_type }}</span>
+                    </div>
+                    </div>  
+                    <div class="job-post-item-body d-block d-md-flex">
+                    <div class="mr-3"><span class="icon-layers"></span> <a href="{{ job.company_website }}">{{ job.company }}</a></div>
+                    <div><span class="icon-my_location"></span> <span>{{ job.location }}, {{ job.country }}</span></div>
+                    </div>
+                </div>
+
+                <div class="ml-auto d-flex">
+                    <a href="job-single.html" class="btn btn-primary py-2 mr-1">Apply Job</a>
+                    <a href="#" class="btn btn-secondary rounded-circle btn-favorite d-flex align-items-center icon">
+                        <span class="icon-heart"></span>
+                    </a>
+                </div>
+                </div>
+            </div><!-- end -->
+            {% endfor %}
+    </div>
+{% endblock recent_jobs %}
+
+
+
+  
+{% block script %}
+{% include "partials/script.html" %}
+{% endblock script %}
