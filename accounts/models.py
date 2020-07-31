@@ -5,7 +5,7 @@ from django.contrib.auth.models import AbstractUser
 class User(AbstractUser):
     ROLES = {("0","Admin"),("1","User"),("2","Guest")}
     role = models.CharField(max_length = 1, choices=ROLES, default="2")
-    email = models.EmailField(verbose_name = Email Field, max_length=255, unique=True)
+    email = models.EmailField(verbose_name ="Email Address", max_length=255, unique=True)
 
     USERNAME_FIELD = "email"
     REQUIRED_FIELDS = "username", "role", "first_name", "last_name"

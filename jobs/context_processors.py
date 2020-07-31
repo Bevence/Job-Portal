@@ -4,7 +4,7 @@ from jobs.models import Category, Jobs
 
 def categories(request):
     category_list = Category.objects.all()
-    print(category_list)
+    # print(category_list)
     return{"categories": category_list}
 
 

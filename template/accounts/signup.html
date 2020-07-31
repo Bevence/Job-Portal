@@ -1,5 +1,6 @@
 
 {% extends 'partials/layout.html' %}
+{% load cripsy_forms_tags %}
     
 {% block nav %}
 {% include "partials/nav.html" %}
@@ -29,6 +30,11 @@
             </div>
             </div>
             <div class="row">
+                <form method="post">
+                  {% csrf_token %}
+                  {{ form|cripsy }}
+                    <button type="submit">Signup</button>
+                </form>
             </div>
     </div>
 {% endblock recent_jobs %}
